@@ -1,0 +1,25 @@
+<div class="form" [formGroup]="form">
+  <h1>Register page</h1>
+  <input
+    class="input"
+    matInput
+    placeholder="Username"
+    type="text"
+    formControlName="username"
+  />
+  <input
+    class="input"
+    matInput
+    placeholder="Email"
+    type="text"
+    formControlName="email"
+  />
+  <input
+    class="input"
+    matInput
+    placeholder="Password"
+    type="text"
+    formControlName="password"
+  />
+  <button (click)="onSubmit()" class="register" mat-button>Register</button>
+</div>
