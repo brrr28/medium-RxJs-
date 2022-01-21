@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
-import {registerAction} from '../../store/actions/register.action';
+import {registerAction} from '../../store/actions';
 
 @Component({
   selector: 'app-register',
