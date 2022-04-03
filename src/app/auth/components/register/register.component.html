@@ -1,25 +1,42 @@
-<div class="form" [formGroup]="form">
-  <h1>Register page</h1>
-  <input
-    class="input"
-    matInput
-    placeholder="Username"
-    type="text"
-    formControlName="username"
-  />
-  <input
-    class="input"
-    matInput
-    placeholder="Email"
-    type="text"
-    formControlName="email"
-  />
-  <input
-    class="input"
-    matInput
-    placeholder="Password"
-    type="text"
-    formControlName="password"
-  />
-  <button (click)="onSubmit()" class="register" mat-button>Register</button>
+<div class="form">
+  <div class="inputs" [formGroup]="form">
+    <h1><strong> Sign up</strong></h1>
+    <p class="redirect" (click)="toLogin()">Have an account?</p>
+    <div class="errors">
+      <app-backend-errors
+        *ngIf="errors$ | async"
+        [backErrors]="errors$ | async"
+      ></app-backend-errors>
+    </div>
+
+    <input
+      class="input"
+      matInput
+      placeholder="Username"
+      type="text"
+      formControlName="username"
+    />
+    <input
+      class="input"
+      matInput
+      placeholder="Email"
+      type="text"
+      formControlName="email"
+    />
+    <input
+      class="input"
+      matInput
+      placeholder="Password"
+      type="text"
+      formControlName="password"
+    />
+    <button
+      [disabled]="isSubmitting$ | async"
+      (click)="onSubmit()"
+      class="register"
+      mat-button
+    >
+      Sign up
+    </button>
+  </div>
 </div>

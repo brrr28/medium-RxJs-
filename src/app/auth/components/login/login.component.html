@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="form">
+  <div class="inputs" [formGroup]="form">
+    <h1><strong> Login</strong></h1>
+    <p class="redirect" (click)="toRegister()">Need an account?</p>
+    <div class="errors">
+      <app-backend-errors
+        *ngIf="errors$ | async"
+        [backErrors]="errors$ | async"
+      >
+      </app-backend-errors>
+    </div>
+    <input
+      class="input"
+      matInput
+      placeholder="Email"
+      type="text"
+      formControlName="email"
+    />
+    <input
+      class="input"
+      matInput
+      placeholder="Password"
+      type="text"
+      formControlName="password"
+    />
+    <button
+      [disabled]="isSubmitting$ | async"
+      (click)="onSubmit()"
+      class="register"
+      mat-button
+    >
+      Login
+    </button>
+  </div>
+</div>
